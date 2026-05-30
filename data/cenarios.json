@@ -1,0 +1,15 @@
+{
+  "nome_missao": "AgroSat-1",
+  "status_satelite": "Operação Nominal",
+  "parametros_atuais": {
+    "ndvi_medio": 0.42,
+    "temperatura_payload_optico_c": 38.5,
+    "armazenamento_ocupado_percentual": 92,
+    "estabilidade_atitude_yaw": 1.2
+  },
+  "impacto_terrestre": "Monitoramento de irrigação em fazendas de soja no Centro-Oeste (Mato Grosso).",
+  "historico_recente": [
+    "Aviso: Temperatura do payload subiu 3°C na última órbita.",
+    "Janela de downlink com a base de Cuiabá em 12 minutos."
+  ]
+}
