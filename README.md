@@ -81,11 +81,11 @@ O sistema conta com um motor de injeção de falhas e estados orbitais com 6 cen
 3. Configurar as Variáveis de Ambiente
 Crie um arquivo .env na raiz do projeto e insira a chave oficial fornecida para acesso à nuvem:
    ```bash
-    OLLAMA_API_KEY=[Acesse https://ollama.com, criem uma conta gratuita e gerem uma API Key]
+   OLLAMA_API_KEY=[Acesse https://ollama.com, criem uma conta gratuita e gerem uma API Key]
    ```
 4. Executar o Painel
    ```bash
-    python main.py
+   python main.py
    ```
 
 ---
