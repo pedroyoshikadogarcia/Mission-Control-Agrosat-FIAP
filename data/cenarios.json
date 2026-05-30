@@ -1,15 +1,104 @@
-{
-  "nome_missao": "AgroSat-1",
-  "status_satelite": "Operação Nominal",
-  "parametros_atuais": {
-    "ndvi_medio": 0.42,
-    "temperatura_payload_optico_c": 38.5,
-    "armazenamento_ocupado_percentual": 92,
-    "estabilidade_atitude_yaw": 1.2
+[
+  {
+    "id": 1,
+    "nome_cenario": "Crítico - Estresse Hídrico e Superaquecimento",
+    "nome_missao": "AgroSat-1",
+    "status_satelite": "Operação Nominal",
+    "parametros_atuais": {
+      "ndvi_medio": 0.42,
+      "temperatura_payload_optico_c": 38.5,
+      "armazenamento_ocupado_percentual": 92,
+      "estabilidade_atitude_yaw": 1.2
+    },
+    "impacto_terrestre": "Monitoramento de irrigação em fazendas de soja no Centro-Oeste (Mato Grosso).",
+    "historico_recente": [
+      "Aviso: Temperatura do payload subiu 3°C na última órbita.",
+      "Janela de downlink com a base de Cuiabá em 12 minutos."
+    ]
   },
-  "impacto_terrestre": "Monitoramento de irrigação em fazendas de soja no Centro-Oeste (Mato Grosso).",
-  "historico_recente": [
-    "Aviso: Temperatura do payload subiu 3°C na última órbita.",
-    "Janela de downlink com a base de Cuiabá em 12 minutos."
-  ]
-}
+  {
+    "id": 2,
+    "nome_cenario": "Nominal - Safra Saudável e Hardware 100%",
+    "nome_missao": "AgroSat-1",
+    "status_satelite": "Operação Nominal",
+    "parametros_atuais": {
+      "ndvi_medio": 0.78,
+      "temperatura_payload_optico_c": 21.4,
+      "armazenamento_ocupado_percentual": 34,
+      "estabilidade_atitude_yaw": 0.05
+    },
+    "impacto_terrestre": "Lavouras de soja com excelente biomassa e vigor vegetativo. Sem sinais de seca.",
+    "historico_recente": [
+      "Downlink realizado com sucesso na base de Cuiabá.",
+      "Baterias em 98% com carga solar máxima."
+    ]
+  },
+  {
+    "id": 3,
+    "nome_cenario": "Emergência - Falha Crítica de Atitude (Capotamento Orbital)",
+    "nome_missao": "AgroSat-1",
+    "status_satelite": "Degradado",
+    "parametros_atuais": {
+      "ndvi_medio": 0.55,
+      "temperatura_payload_optico_c": 24.0,
+      "armazenamento_ocupado_percentual": 15,
+      "estabilidade_atitude_yaw": 8.7
+    },
+    "impacto_terrestre": "Imagens borradas. Monitoramento intermitente por perda de apontamento nas fazendas.",
+    "historico_recente": [
+      "Alerta: Desvio angular severo detectado no eixo Yaw.",
+      "Giroscópios de controle de atitude reportando saturação de torque."
+    ]
+  },
+  {
+    "id": 4,
+    "nome_cenario": "Alerta Agro - Praga ou Seca Extrema (NDVI no Chão)",
+    "nome_missao": "AgroSat-1",
+    "status_satelite": "Operação Nominal",
+    "parametros_atuais": {
+      "ndvi_medio": 0.21,
+      "temperatura_payload_optico_c": 23.5,
+      "armazenamento_ocupado_percentual": 50,
+      "estabilidade_atitude_yaw": 0.1
+    },
+    "impacto_terrestre": "Anomalia severa détectada em solo. Risco iminente de perda total da safra de soja na região.",
+    "historico_recente": [
+      "Assinatura espectral indica solo exposto ou degradação biológica severa.",
+      "Sistemas de telemetria de órbita operando perfeitamente."
+    ]
+  },
+  {
+    "id": 5,
+    "nome_cenario": "Crítico de TI - Sobrecarga de Armazenamento e Perda de Pacotes",
+    "nome_missao": "AgroSat-1",
+    "status_satelite": "Restrito",
+    "parametros_atuais": {
+      "ndvi_medio": 0.68,
+      "temperatura_payload_optico_c": 26.1,
+      "armazenamento_ocupado_percentual": 100,
+      "estabilidade_atitude_yaw": 0.2
+    },
+    "impacto_terrestre": "Novas imagens da fazenda estão sendo descartadas por falta de espaço em disco.",
+    "historico_recente": [
+      "Estouro de buffer no subsistema de armazenamento de dados científicos.",
+      "Falha de sincronização na última tentativa de downlink automático."
+    ]
+  },
+  {
+    "id": 6,
+    "nome_cenario": "Anomalia Ambiental - Tempestade Solar / Radiação Climática",
+    "nome_missao": "AgroSat-1",
+    "status_satelite": "Modo de Segurança",
+    "parametros_atuais": {
+      "ndvi_medio": 0.0,
+      "temperatura_payload_optico_c": 45.2,
+      "armazenamento_ocupado_percentual": 10,
+      "estabilidade_atitude_yaw": 3.4
+    },
+    "impacto_terrestre": "Coleta de dados interrompida preventivamente para salvar os circuitos do satélite.",
+    "historico_recente": [
+      "Sensor de cintilação detectou pico de radiação ionizante de evento solar.",
+      "Payload óptico desativado automaticamente por superaquecimento ambiental."
+    ]
+  }
+]
