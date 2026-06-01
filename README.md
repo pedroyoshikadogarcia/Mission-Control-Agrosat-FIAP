@@ -1,101 +1,92 @@
-# Mission Control AI - AgroSat-1 
-> **Global Solution 2026.1** > **Disciplina:** Prompt Engineering and Artificial Intelligence  
-> **Curso:** Ciência da Computação - FIAP
+#  Mission Control AI — AgroSat-1
 
----
+# Integrantes
+- Pedro Yoshikado Garcia — RM: 570449
+- Pedro Andreassa Zamai RM:569318
+- Thiago Maluf Hofmann RM: 569852
 
-##  Descrição do Projeto
-O **Mission Control AI - AgroSat-1** é uma aplicação de terminal de alta performance (CLI) projetada para atuar como uma estação de monitoramento orbital automatizada. O sistema foca no monitoramento de lavouras e saúde de satélites no Centro-Oeste brasileiro (Mato Grosso).
+# O que o projeto faz
+O Mission Control AI — AgroSat-1 é um sistema interativo de terminal projetado para monitorar telemetrias orbitais de satélites voltados ao agronegócio no Centro-Oeste brasileiro. O sistema combina uma camada lógica local em Python para validação matemática de limites críticos (como NDVI, temperatura e atitude) com o modelo de IA gpt-oss:120b via Ollama Cloud. A inteligência artificial atua de forma integrada em um loop contínuo de chatbot, interpretando anomalias complexas e gerando planos de mitigação em tempo real para os operadores em terra.
 
-A arquitetura do projeto combina duas camadas de inteligência:
-1. **Lógica Determinística (Python Hard-Coded):** Validação matemática estrita de limites físicos (temperatura, atitude, armazenamento e NDVI) via telemetria.
-2. **Inteligência Artificial Generativa:** Integração via API oficial do Ollama com o modelo de larga escala **`gpt-oss:120b`**, responsável por interpretar o contexto híbrido e gerar relatórios detalhados de mitigação e impacto agronômico.
+# Persona atendida
+**Operador de Controle de Voo Espacial e Monitoramento Agrícola.** Justificativa: O sistema fornece um painel CLI de leitura rápida com alertas visuais imediatos e um chatbot direto para que o operador possa interagir, diagnosticar falhas na constelação e tomar decisões rápidas para evitar a perda de dados da safra em solo.
 
----
+# Tecnologias utilizadas
+- Python 3.10+
+- Ollama Cloud API (modelo gpt-oss:120b)
+- Bibliotecas: ollama, python-dotenv, rich
 
-##  Integrantes do Grupo
-* **Pedro Yoshikado Garcia** - RM: 570449
-* Pedro Andreassa Zamai - RM: 569318
-* Thiago Maluf Hofmann - RM: 569852
-
----
-
-##  Stack Técnica
-* **Core:** Python 3.x
-* **Interface CLI:** Rich Library (Renderização de tabelas, painéis dinâmicos de alerta e estilização avançada)
-* **Engine de IA:** Ollama Client API (Modelo `gpt-oss:120b` na Ollama Cloud da FIAP)
-* **Configuração:** Python-dotenv para isolamento de credenciais
-
----
-
-##  Arquitetura do Projeto
+## 📂 Estrutura do Projeto
 ```text
 Mission-Control-Agrosat-FIAP/
 ├── data/
 │   └── cenarios.json          # Banco de dados de simulação (6 cenários de telemetria)
 ├── prompts/
-│   └── system_prompt.md       # Engenharia de Prompt (Persona de Engenheiro de Voo)
+│   └── system_prompt.md       # Engenharia de Prompt (Persona do Engenheiro de Voo)
 ├── src/
 │   ├── __init__.py
-│   ├── alertas.py             # Camada lógica hard-coded (Ifs e Elses de validação)
-│   ├── engine.py              # Integração e comunicação com a API Ollama Cloud
+│   ├── alertas.py             # Camada lógica hard-coded (Regras de validação local)
+│   ├── engine.py              # Integração e histórico de contexto com a Ollama Cloud
 │   ├── telemetria.py          # Leitura e parsing dinâmico de cenários JSON
 │   └── ui.py                  # Funções de renderização visual no terminal
-├── assets/                    # Screenshots das simulações (Cenários 1 a 6)
-├── .env                       # Chave de API (Protegido por .gitignore)
-├── .gitignore
+├── assets/                    # Evidências de funcionamento (Cenários de teste)
+├── .env                       # Chave privada da API (Protegido por .gitignore)
+├── .env.example               # Exemplo de configuração de variáveis de ambiente
+├── .gitignore                 # Filtro de arquivos para o Git
 ├── banner_ascii.py            # Elemento visual de boot do terminal
-├── main.py                    # Ponto de entrada do sistema
-└── requirements.txt           # Dependências do projeto
+├── main.py                    # Ponto de entrada do sistema interativo (Chatbot loop)
+└── requirements.txt           # Dependências fixadas do projeto
 ```
 
----
-
-##  Cenários de Simulação Disponíveis
-O sistema conta com um motor de injeção de falhas e estados orbitais com 6 cenários distintos para homologação da IA:
-
-1. Crítico - Estresse Hídrico e Superaquecimento: Anomalia térmica no sensor e seca na safra.
-
-2. Nominal - Safra Saudável e Hardware 100%: Satélite operando em condições ideais de saúde.
-
-3. Emergência - Falha Crítica de Atitude: Desvio angular severo no eixo Yaw (Satélite capotando).
-
-4. Alerta Agro - Praga ou Seca Extrema: Hardware saudável, mas NDVI crítico em solo.
-
-5. Crítico de TI - Sobrecarga de Armazenamento: Estouro de buffer (100% de ocupação) e perda de dados.
-
-6. Anomalia Ambiental - Tempestade Solar: Radiação ionizante forçando o Modo de Segurança (Safe Mode).
-
----
-
-##  Instalação e Execução
-1. Clonar o Repositório
-  ```bash
-  git clone https://github.com/PedroYoshikado/Mission-Control-Agrosat-FIAP.git
-  cd Mission-Control-Agrosat-FIAP
-  ```
-2. Instalar Dependências
-  ```bash
+# Como executar
+1. Clone o repositório:
+```bash
+   git clone [https://github.com/PedroYoshikado/Mission-Control-Agrosat-FIAP.git](https://github.com/PedroYoshikado/Mission-Control-Agrosat-FIAP.git)
+   cd Mission-Control-Agrosat-FIAP
+```
+2. Crie ambiente virtual:
+```bash
+  python -m venv .venv && source .venv/bin/activate
+```
+(No Windows use: .venv\Scripts\activate)
+3. Instale dependências:
+```bash
   pip install -r requirements.txt
-  ```
-3. Configurar as Variáveis de Ambiente
-Crie um arquivo .env na raiz do projeto e insira a chave oficial fornecida para acesso à nuvem:
-   ```bash
-   OLLAMA_API_KEY=[Acesse https://ollama.com, criem uma conta gratuita e gerem uma API Key]
-   ```
-4. Executar o Painel
-   ```bash
-   python main.py
-   ```
+```
+4. Crie arquivo .env na raiz com:
+```bash
+  OLLAMA_API_KEY=sua_chave_aquiOLLAMA_API_KEY=[Acesse https://ollama.com, criem uma conta gratuita e gerem uma API Key no painel de
+configurações.]
+```
+5. Execute
+```bash
+  python main.py
+```
 
----
+## System Prompt
+O prompt de sistema completo utilizado para configurar a persona do engenheiro de voo e as restrições de comportamento da IA encontra-se isolado no seguinte arquivo do repositório:
+```
+ prompts/system_prompt.md
+```
 
-##  Resultados e Evidências
-As capturas de tela demonstrando o comportamento do painel de controle e as tomadas de decisão da IA para cada um dos 6 estados orbitais encontram-se documentadas na pasta /assets.
+## Cenários de teste demonstrados
+1. Operação normal (Cenário 2): Satélite saudável, todos os parâmetros dentro do range ideal e biomassa da lavoura excelente.
 
----
+2. Temperatura crítica (Cenário 1): Alerta local de superaquecimento do payload óptico combinado com estresse hídrico em terra.
 
-##  Demonstração em Vídeo
-Assista à defesa técnica do projeto e simulação ao vivo no YouTube:
+3. Falha de Atitude / Perda de apontamento (Cenário 3): Desvio angular severo no eixo Yaw com satélite capotando em órbita.
 
-- Video ainda sendo produzido
+4. Alerta Agro / Quebra de Safra (Cenário 4): Satélite 100% operacional, mas identificando anomalia severa (seca/praga) com NDVI crítico em solo.
+
+5. Sobrecarga de TI (Cenário 5): Estouro de buffer com 100% de armazenamento ocupado e descarte de novos pacotes científicos.
+
+6. Anomalia Ambiental (Cenário 6): Impacto de radiação por tempestade solar, forçando o satélite a entrar em Modo de Segurança (Safe Mode).
+
+## Limitações conhecidas
+- Falta de persistência de histórico em banco: O histórico de conversa do chatbot é mantido puramente na memória RAM (historico_conversa em formato de lista). Se o operador fechar o terminal ou o programa for encerrado, todo o contexto da conversa anterior é perdido.
+
+- Ausência de telemetria em tempo real (Streaming): Os dados de telemetria não são recebidos via streaming real do espaço; o sistema trabalha com injeção estática de cenários pré-configurados através do arquivo cenarios.json.
+
+- Dependência estrita de conexão síncrona: O chatbot não possui tratamento de timeout assíncrono ou modo offline. Caso a API da Ollama Cloud fique instável, a CLI trava o loop aguardando a resposta da rede.
+
+## Vídeo de demonstração
