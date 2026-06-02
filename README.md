@@ -17,14 +17,19 @@ O Mission Control AI — AgroSat-1 é um sistema interativo de terminal projetad
 
 - Cenário 01
 <img width="1562" height="881" alt="image" src="https://github.com/user-attachments/assets/5ef955bc-3a13-413d-b6ec-a476dd02b57a" />
+
 - Cenário 02
 <img width="1534" height="612" alt="image" src="https://github.com/user-attachments/assets/22f23f21-8c1a-46a9-916c-6cce8f25fd11" />
+
 - Cenário 03
 <img width="1555" height="895" alt="image" src="https://github.com/user-attachments/assets/24b69ad1-86ec-4553-a001-da32ff3558ef" />
+
 - Cenário 04
 <img width="1541" height="935" alt="image" src="https://github.com/user-attachments/assets/c11bee4a-282a-4e0c-9fbb-a4ea47747dea" />
+
 - Cenário 05
 <img width="1534" height="886" alt="image" src="https://github.com/user-attachments/assets/5ef18622-57ad-47a2-a067-4a15e2e81e06" />
+
 - Cenário 06
 <img width="1552" height="905" alt="image" src="https://github.com/user-attachments/assets/cba68b4c-96e9-429e-896e-5ba6145ba9ca" />
 
