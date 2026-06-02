@@ -90,3 +90,4 @@ O prompt de sistema completo utilizado para configurar a persona do engenheiro d
 - Dependência estrita de conexão síncrona: O chatbot não possui tratamento de timeout assíncrono ou modo offline. Caso a API da Ollama Cloud fique instável, a CLI trava o loop aguardando a resposta da rede.
 
 ## Vídeo de demonstração
+https://youtu.be/uPmqgiGJGkw
